@@ -8,10 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.List;
-import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/v1/task")
 public class TaskController {
