@@ -26,7 +26,6 @@ public class TaskController {
 
     @GetMapping
     public List<TaskDto> getTasks() {
-        System.out.println("W get tasks");
         List<Task> tasks = service.getAllTasks();
         return taskMapper.mapToTaskDtoList(tasks);
     }
