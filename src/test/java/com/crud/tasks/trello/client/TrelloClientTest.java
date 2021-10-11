@@ -101,9 +101,9 @@ class TrelloClientTest {
         when(restTemplate.getForObject(uri, TrelloBoardDto[].class)).thenReturn(null);
 
         //When
-        List<TrelloBoardDto> emptyList = trelloClient.getTrelloBoards();
+        List<TrelloBoardDto> result = trelloClient.getTrelloBoards();
 
         //Then
-        assertTrue(emptyList.isEmpty());
+        assertTrue(result.isEmpty());
     }
 }
