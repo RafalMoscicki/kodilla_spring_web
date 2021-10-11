@@ -4,6 +4,7 @@ import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/v1/task")
+@Slf4j
 public class TaskController {
 
     private final DbService service;
@@ -53,8 +55,13 @@ public class TaskController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public TaskDto createTask(@RequestBody TaskDto taskDto) {
+        log.info(taskDto.toString());
         Task task = taskMapper.mapToTask(taskDto);
+        log.info("Task mapped");
         Task savedTask = service.saveTask(task);
-        return taskMapper.mapToTaskDto(savedTask);
+        log.info("Task saved with id " + savedTask.getId());
+        TaskDto savedTaskDto = taskMapper.mapToTaskDto(savedTask);
+        log.info("After mapped: " + savedTaskDto.toString());
+        return savedTaskDto;
     }
 }
