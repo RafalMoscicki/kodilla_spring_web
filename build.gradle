@@ -25,6 +25,7 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 //	runtimeOnly 'org.postgresql:postgresql'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'com.google.code.gson:gson'
 	testImplementation ('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vitage', module: 'junit-vintage-engine'
 	}
