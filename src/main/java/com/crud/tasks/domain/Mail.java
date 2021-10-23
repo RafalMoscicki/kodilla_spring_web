@@ -2,11 +2,13 @@ package com.crud.tasks.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.util.Optional;
 
 @AllArgsConstructor
+@EqualsAndHashCode
 @Getter
 @Builder
 public class Mail {
