@@ -1,6 +1,7 @@
 package com.crud.tasks.controller;
 
-import com.crud.tasks.domain.*;
+import com.crud.tasks.domain.Task;
+import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
 import com.google.gson.Gson;
@@ -19,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 @SpringJUnitWebConfig
 @WebMvcTest(TaskController.class)
